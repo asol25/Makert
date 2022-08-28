@@ -33,12 +33,12 @@ public class Trader {
 	 * @param market The market object.
 	 * @return 1 if the selling part of the transaction is successful, 0 otherwise.
 	 */
-    public int sell(double amount, double price, double market) {
+    public int sell(double amount, double price, Market market) {
         final boolean flag = this.wallet.checkBlockedCoins(amount) || this.ID == 0;
 
         if (flag) {
             this.wallet.payFromBlockedCoins(amount);
-            double calculator = amount * price * (1.0 - (double)market.getFee() / 1000.0);
+            double calculator = amount * price * (1.0 - (double)market.getMarket() / 1000.0);
             this.wallet.depositDollars(calculator);
         }
 
@@ -52,7 +52,7 @@ public class Trader {
     * @param market the market object.
     * @return 1 if the buying part of the transaction is successful, 0 otherwise.
     */
-    public int buy(double amount, double price, double market) {
+    public int buy(double amount, double price, Market market) {
         final double dollars = amount * price;
         final boolean flag = this.wallet.checkBlockedDollars(dollars) || this.ID == 0;
 
@@ -63,7 +63,6 @@ public class Trader {
 
         return flag ? 1 : 0;
     }
-
 
 	/**
 	 * Getter method for wallet.

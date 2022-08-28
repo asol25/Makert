@@ -72,6 +72,14 @@ public class Wallet {
 	}
 
     /**
+     * Pays the given amount of coins from the blocked coins.
+     * @param coins The given amount of coins.
+     */
+    public void payFromBlockedCoins(double coins) {
+        blockedCoins -= coins;
+    }
+
+    /**
      * Check the amount of dollars is affordable.
      * @param dollars Amount of the dollars of the wallet.
      * @return TRUE if the given amount of dollars is affordable, FALSE otherwise.
@@ -79,15 +87,7 @@ public class Wallet {
     public boolean checkWithDrawDollars(double dollars) {
         return this.dollars <= dollars;
     }
-    
-	/**
-	 * Pays the given amount of coins from the blocked coins.
-	 * @param coins The given amount of coins.
-	 */
-	public void payFromBlockedCoins(double coins) {
-		blockedCoins -= coins;
-	}
-	
+
     /**
      * Check the amount of coins is affordable.
      * @param coins Amount of the coins of the wallet.
@@ -114,4 +114,14 @@ public class Wallet {
 	public boolean checkBlockedCoins(double coins) {
 		return coins <= blockedCoins;
 	}
+
+
+    /**
+     * Returns the given amount of dollars from the blocked dollars to the available dollars.
+     * @param dollars The given amount of dollars.
+     */
+    public void returnDollars(double dollars) {
+        this.dollars += dollars;
+        blockedDollars -= dollars;
+    }
 }
