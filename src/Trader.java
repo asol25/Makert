@@ -10,7 +10,7 @@ public class Trader {
      */
     private Wallet wallet;
 
-/**
+    /**
 	 * Total number of traders in the market.
 	 */
 	public static int numberOfUsers = 0;
@@ -52,7 +52,7 @@ public class Trader {
     * @param market the market object.
     * @return 1 if the buying part of the transaction is successful, 0 otherwise.
     */
-    public boolean buy(double amount, double price, double market) {
+    public int buy(double amount, double price, double market) {
         final double dollars = amount * price;
         final boolean flag = this.wallet.checkBlockedDollars(dollars) || this.ID == 0;
 

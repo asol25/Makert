@@ -1,14 +1,15 @@
 public class Transaction {
 
-   /**
+	/**
 	 * Selling order of the transaction.
+	 *
 	 */
-	private SellingOrder sellingOrder;
+	private final SellingOrder sellingOrder;
 
-    /**`
+    /**
 	 * Buying order of the transaction.
 	 */
-	private BuyingOrder buyingOrder;
+	private final BuyingOrder buyingOrder;
 
     /**
 	 * Constructor with 2 parameters, namely SellingOrder and buyingOrder.
