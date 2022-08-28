@@ -1,17 +1,38 @@
 public class Transaction {
 
-    /**
-     * ID of the transaction.
-     */
-    private int ID;
+   /**
+	 * Selling order of the transaction.
+	 */
+	private SellingOrder sellingOrder;
 
     /**
-     * wallet of the transaction.
-     */
-    private Wallet wallet;
+	 * Buying order of the transaction.
+	 */
+	private BuyingOrder buyingOrder;
 
-    public Transaction(int ID, Wallet wallet) {
-        this.ID = ID;
-        this.wallet = wallet;
-    }
+    /**
+	 * Constructor with 2 parameters, namely SellingOrder and buyingOrder.
+	 * @param sellingOrder Selling order of the transaction.
+	 * @param buyingOrder Buying order of the transaction.
+	 */
+	public Transaction(SellingOrder sellingOrder, BuyingOrder buyingOrder) {
+		this.sellingOrder = sellingOrder;
+		this.buyingOrder = buyingOrder;
+	}
+
+    /**
+	 * Getter method for sellingOrder.
+	 * @return Selling order of the transaction.
+	 */
+	public SellingOrder getSellingOrder() {
+		return sellingOrder;
+	}
+
+    /**
+	 * Getter method for buyingOrder.
+	 * @return Buying order of the transaction.
+	 */
+	public BuyingOrder getBuyingOrder() {
+		return buyingOrder;
+	}
 }
