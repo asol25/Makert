@@ -5,7 +5,7 @@ public class Transaction {
 	 */
 	private SellingOrder sellingOrder;
 
-    /**
+    /**`
 	 * Buying order of the transaction.
 	 */
 	private BuyingOrder buyingOrder;
